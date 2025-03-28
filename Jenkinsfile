@@ -2,17 +2,16 @@ pipeline {
     agent any
     tools {
         maven 'maven'  // Use the exact name you set in Global Tool Configuration
-        jdk 'jdk17'
     }
     stages {
         stage('Build') {
             steps {
-                bat 'mvn clean package'
+                sh 'mvn clean package'
             }
         }
         stage('Test') {
             steps {
-                bat 'mvn test'
+                sh 'mvn test'
             }
         }
         // stage('Run JAR') {
